@@ -1,0 +1,6 @@
+set main-view = id date author commit-title:graph=yes,refs=yes
+set wrap-lines = yes
+set vertical-split = no
+set commit-order = date
+
+bind generic F !git fetch

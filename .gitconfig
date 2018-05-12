@@ -1,0 +1,49 @@
+[user]
+	email = atsuinatsu.samuifuyu@gmail.com
+	name = oieioi
+[alias]
+	a=add
+	b = branch
+	br = branch -a
+	cached = diff --cached
+	co = checkout
+	com = commit -m
+	d = diff
+	f = fetch
+	l = log --all --graph --pretty='format:%C(yellow)%h%Creset %C(magenta)%ad%Creset %Cgreen%an%Creset %s %Cred%d%Creset'  --branches
+	last = show -1 HEAD --stat -p
+	s = status -s
+	sb = show-branch
+	pr = pull-request
+[color]
+	ui = true
+	diff = true
+[core]
+	editor = nvim
+	# gitcontrib/diff-highlightをパスの通ったとこに置くこと
+	pager = diff-highlight|LESS=-R less
+	excludesfile = /Users/koike/.gitignore_global
+[log]
+	date = local
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[http]
+	sslVerify = false
+[credential]
+	helper = osxkeychain
+[push]
+	default = current
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[tig]
+	main-view = id date author commit-title:graph=yes,refs=yes
+	wrap-lines = yes
+	vertical-split = no
+	commit-order = topo
