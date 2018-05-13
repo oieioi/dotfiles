@@ -1,3 +1,0 @@
-[submodule "zshfunctions/zsh-git-escape-magic"]
-	path = zshfunctions/zsh-git-escape-magic
-	url = https://github.com/knu/zsh-git-escape-magic.git
