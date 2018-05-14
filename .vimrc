@@ -180,6 +180,7 @@ NeoBundle 'maxmellon/vim-jsx-pretty'
 " optional
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/es.next.syntax.vim'
+NeoBundle 'tpope/vim-rails'
 
 " Required:
 call neobundle#end()
