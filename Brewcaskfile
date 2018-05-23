@@ -28,6 +28,7 @@ brew cask install openemu
 brew cask install simple-comic
 brew cask install skype
 brew cask install spotify
+brew cask install spotmenu
 brew cask install slack
 brew cask install sourcetree
 brew cask install spectacle
