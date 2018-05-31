@@ -65,7 +65,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-function dict() {
+function jap() {
   grep -E "^$1" /Users/koike/Downloads/dictionaries/gene-utf8.txt -A 1 -wi --color
 }
 
