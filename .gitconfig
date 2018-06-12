@@ -14,7 +14,7 @@
 	last = show -1 HEAD --stat -p
 	s = status -s
 	sb = show-branch
-	pr = pull-request
+	cpr = pull-request
 [color]
 	ui = true
 	diff = true
