@@ -1,5 +1,5 @@
 " key
-let g:python3_host_prog = expand('~/.pyenv/shims/python3')
+let g:python3_host_prog = expand('/Users/koike/.pyenv/shims/python3')
 nnoremap <Space>h ^
 nnoremap <Space>l $
 nnoremap <Space>a A
