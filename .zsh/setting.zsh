@@ -13,13 +13,9 @@ export PATH=$HOME/.rbenv/bin:$PATH
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-
 export PATH=$PATH:~/bin
-# 補完
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
-
-
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
 export GOPATH=~/.go
 
 # prompt
@@ -43,24 +39,8 @@ setopt hist_reduce_blanks
 
 # 補完時に大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-# ssh config読む
-hosts=( ${(@)${${(M)${(s:# :)${(zj:# :)${(Lf)"$([[ -f ~/.ssh/config ]] && < ~/.ssh/config)"}%%\#*}}##host(|name) *}#host(|name) }/\*} )
-zstyle ':completion:*:hosts' hosts $hosts
+
 # git branchname show
 zstyle ':vcs_info:*' formats '(%b)'
 zstyle ':vcs_info:*' actionformats '(%b|%a)'
 autoload -Uz vcs_info
-
-# 補完
-autoload -U compinit
-compinit
-# bash補完
-autoload bashcompinit
-bashcompinit
-
-# git + hub = github
-#eval "$(hub alias -s)"
-
-# pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"

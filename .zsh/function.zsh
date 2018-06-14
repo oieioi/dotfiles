@@ -17,7 +17,7 @@ function google() {
 
 # Ctrl+Oでls
 # http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
-ls_current_dir() {
+function ls_current_dir() {
     zle accept-line
     if [[ -z "$BUFFER" ]]; then
         echo ''
@@ -34,7 +34,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 bindkey '^S' history-incremental-pattern-search-forward
 
 # gitのブランチ名表示
-precmd () {
+function precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
@@ -65,10 +65,12 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# 英和辞書
+# https://qiita.com/yubais/items/21cac44d71c30edd22c9
 function jap() {
   # i: ignore-case
   # A: 後ろn行表示
   grep -A 1 -i --color -E "^$1" /Users/koike/Downloads/dictionaries/gene-utf8.txt
 }
 
-p() { peco | while read LINE; do $@ $LINE; done }
+function p() { peco | while read LINE; do $@ $LINE; done }
