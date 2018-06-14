@@ -181,7 +181,7 @@ NeoBundle 'maxmellon/vim-jsx-pretty'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/es.next.syntax.vim'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'pocke/iro.vim'
+"NeoBundle 'pocke/iro.vim'
 
 " Required:
 call neobundle#end()
