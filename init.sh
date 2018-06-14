@@ -22,3 +22,6 @@ pip3 install typing
 
 # gem
 gem install neovim
+
+# Finderのタイトル表示
+defaults write com.apple.finder _FXShowPosixPathInTitle -boolean true\n
