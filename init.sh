@@ -11,15 +11,9 @@ mkdir -p ~/.config/nvim
 ln -s /Users/koike/Documents/repos/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -s /Users/koike/Documents/repos/dotfiles/.tigrc ~/.tigrc
 
-# neobundle
-curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > neobundle-install.sh
-sh neobundle-install.sh
-
 # dein.vim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/Downloads/dein-installer.sh
 sh ~/Downloads/dein-installer.sh ~/.cache/dein
-
-
 
 # python
 pyenv install 3.6.5

@@ -16,8 +16,6 @@ if dein#load_state('/Users/koike/.cache/dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
   call dein#add('Shougo/denite.nvim')
-  " TODO: deniteに移行する
-  call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/neoyank.vim')
   call dein#add('flazz/vim-colorschemes')
@@ -84,8 +82,6 @@ set list
 set listchars=tab:»-,trail:-,eol:$,extends:»,precedes:«,nbsp:%
 " 行末スペース可視
 if has("syntax")
-  syntax on
-
   " PODバグ対策
   syn sync fromstart
 
@@ -140,23 +136,16 @@ set foldmethod=syntax
 let ruby_fold=1
 set foldlevel=100
 
-" カラースキーマ (NeoBundleでcolorscheme読んだ後)
+" カラースキーマ
 colorscheme monokain
+
+" migemo ローマ字->日本語サーチ
 if executable('cmigemo')
   cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
 endif
 
-
-" Unite.vim の設定
-let g:unite_enable_start_insert=1
-let g:unite_source_file_mru_limit = 200
-nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
-
-" Denite設定開始
+" Denite -------------------------------
+let g:deite_enable_start_insert=1
 call denite#custom#source(
       \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
@@ -170,7 +159,12 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
 call denite#custom#alias('source', 'file_rec/git', 'file_rec')
 call denite#custom#var('file_rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
-nnoremap <silent> ,uh :<C-u>Denite
-      \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+
+nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
+nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
+nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
+nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+" end Denite -------------------------------
