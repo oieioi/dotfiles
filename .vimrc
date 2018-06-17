@@ -1,5 +1,54 @@
 " key
 let g:python3_host_prog = expand('/Users/koike/.pyenv/shims/python3')
+
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible
+endif
+
+set runtimepath+=/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('/Users/koike/.cache/dein')
+  call dein#begin('/Users/koike/.cache/dein')
+  call dein#add('/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
+  call dein#add('Shougo/denite.nvim')
+  " TODO: deniteに移行する
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/neoyank.vim')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('haya14busa/vim-migemo')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('maxmellon/vim-jsx-pretty')
+  call dein#add('othree/es.next.syntax.vim')
+  call dein#add('othree/javascript-libraries-syntax.vim')
+  call dein#add('othree/yajs.vim')
+  call dein#add('rhysd/ghpr-blame.vim')
+  call dein#add('rhysd/migemo-search.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-surround')
+  call dein#add('vim-jp/vimdoc-ja')
+  call dein#add('vim-scripts/Align')
+  call dein#add('vim-scripts/L9')
+
+  call dein#end()
+  call dein#save_state()
+endif
+filetype plugin indent on
+syntax enable
+if dein#check_install()
+  call dein#install()
+endif
+"End dein Scripts-------------------------
+
 nnoremap <Space>h ^
 nnoremap <Space>l $
 nnoremap <Space>a A
@@ -91,64 +140,21 @@ set foldmethod=syntax
 let ruby_fold=1
 set foldlevel=100
 
-" NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/neobundle.vim'))
-  " Let NeoBundle manage NeoBundle
-  " Required:
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  NeoBundle 'vim-jp/vimdoc-ja'
-  " git
-  NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'flazz/vim-colorschemes'
-  NeoBundle 'scrooloose/nerdtree'
-  " migemo
-  NeoBundle 'haya14busa/vim-migemo'
-  NeoBundle 'rhysd/migemo-search.vim'
-  NeoBundle 'L9'
-  if executable('cmigemo')
-    cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
-  endif
-  " 構文チェック
-  NeoBundle 'scrooloose/syntastic'
-  " 整形ツール
-  NeoBundle 'Align'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/neomru.vim'
-  NeoBundle 'Shougo/neoyank.vim'
-  let g:unite_enable_start_insert=1
-  "let g:unite_source_history_yank_enable =1
-  let g:unite_source_file_mru_limit = 200
-  nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-  nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-  nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-  nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
-  NeoBundle 'tpope/vim-surround'
-  NeoBundle 'tpope/vim-endwise'
-  NeoBundle 'rhysd/ghpr-blame.vim'
-  NeoBundle 'Shougo/denite.nvim'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'othree/yajs.vim'
-  NeoBundle 'maxmellon/vim-jsx-pretty'
-  NeoBundle 'othree/javascript-libraries-syntax.vim'
-  NeoBundle 'othree/es.next.syntax.vim'
-  NeoBundle 'tpope/vim-rails'
-
-  " Required:
-call neobundle#end()
-" Required:
-filetype plugin indent on
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
 " カラースキーマ (NeoBundleでcolorscheme読んだ後)
 colorscheme monokain
+if executable('cmigemo')
+  cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
+endif
+
+
+" Unite.vim の設定
+let g:unite_enable_start_insert=1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 " Denite設定開始
 call denite#custom#source(
