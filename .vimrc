@@ -41,13 +41,8 @@ if has("syntax")
   syn sync fromstart
 
   function! ActivateInvisibleIndicator()
-    " 下の行の"　"は全角スペース
     syntax match InvisibleJISX0208Space "　" display containedin=ALL
     highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
-    "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
-    "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
-    "syntax match InvisibleTab "\t" display containedin=ALL
-    "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
   endfunction
 
   augroup invisible
@@ -88,10 +83,9 @@ set nrformats=
 set helplang=ja,en
 " vimにcoffeeファイルタイプを認識させる
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" ejs は html
-"au BufRead,BufNewFile,BufReadPre *.ejs   set filetype=html
-" インデントを設定
-autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
+" coffeescriptインデントを設定
+autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
 set foldmethod=syntax
 let ruby_fold=1
@@ -105,97 +99,56 @@ endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/neobundle.vim'))
+  " Let NeoBundle manage NeoBundle
+  " Required:
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'vim-jp/vimdoc-ja'
+  " git
+  NeoBundle 'tpope/vim-fugitive'
+  NeoBundle 'flazz/vim-colorschemes'
+  NeoBundle 'scrooloose/nerdtree'
+  " migemo
+  NeoBundle 'haya14busa/vim-migemo'
+  NeoBundle 'rhysd/migemo-search.vim'
+  NeoBundle 'L9'
+  if executable('cmigemo')
+    cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
+  endif
+  " 構文チェック
+  NeoBundle 'scrooloose/syntastic'
+  " 整形ツール
+  NeoBundle 'Align'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'Shougo/neoyank.vim'
+  let g:unite_enable_start_insert=1
+  "let g:unite_source_history_yank_enable =1
+  let g:unite_source_file_mru_limit = 200
+  nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+  nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+  nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+  nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'tpope/vim-endwise'
+  NeoBundle 'rhysd/ghpr-blame.vim'
+  NeoBundle 'Shougo/denite.nvim'
+  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'othree/yajs.vim'
+  NeoBundle 'maxmellon/vim-jsx-pretty'
+  NeoBundle 'othree/javascript-libraries-syntax.vim'
+  NeoBundle 'othree/es.next.syntax.vim'
+  NeoBundle 'tpope/vim-rails'
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'vim-jp/vimdoc-ja'
-
-" My Bundles here:
-" 補完系ツール
-"NeoBundle 'Shougo/neosnippet.vim'
-"NeoBundle 'Shougo/neosnippet-snippets'
-" git
-NeoBundle 'tpope/vim-fugitive'
-" unite的な
-"NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'scrooloose/nerdtree'
-
-" ruby
-"NeoBundle 'vim-ruby/vim-ruby'
-" You can specify revision/branch/tag.
-"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-" migemo
-NeoBundle 'haya14busa/vim-migemo'
-NeoBundle 'rhysd/migemo-search.vim'
-"NeoBundle 'FuzzyFinder'
-NeoBundle 'L9'
-if executable('cmigemo')
-  cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
-endif
-" syntax + 自動compile
-"NeoBundle 'kchmck/vim-coffee-script'
-" 構文チェック
-NeoBundle 'scrooloose/syntastic'
-"let g:syntastic_javascript_checkers = ['eslint']
-" 整形ツール
-NeoBundle 'Align'
-" javascript ライブラリーsyntax
-"NeoBundle 'othree/javascript-libraries-syntax.vim'
-" editorconfig
-"NeoBundle 'editorconfig/editorconfig-vim'
-" ejs のsyntaxハイライト
-"NeoBundle 'briancollins/vim-jst'
-" unite
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neoyank.vim'
-let g:unite_enable_start_insert=1
-"let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 200
-nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
-
-"NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'mxw/vim-jsx'
-"NeoBundle 'leafgarland/typescript-vim'
-"NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'tpope/vim-surround'
-"NeoBundle 'stephpy/vim-php-cs-fixer'
-"NeoBundle 'vim-scripts/ruby-matchit'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'rhysd/ghpr-blame.vim'
-"NeoBundle 'beanworks/vim-phpfmt'
-"NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'Shougo/denite.nvim'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'othree/yajs.vim'
-NeoBundle 'maxmellon/vim-jsx-pretty'
-
-" optional
-NeoBundle 'othree/javascript-libraries-syntax.vim'
-NeoBundle 'othree/es.next.syntax.vim'
-NeoBundle 'tpope/vim-rails'
-"NeoBundle 'pocke/iro.vim'
-
-" Required:
+  " Required:
 call neobundle#end()
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
-"
+
 " カラースキーマ (NeoBundleでcolorscheme読んだ後)
 colorscheme monokain
-au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
 
 " Denite設定開始
 call denite#custom#source(
@@ -215,5 +168,3 @@ nnoremap <silent> ,uh :<C-u>Denite
       \ `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
-"au BufRead,BufNewFile *.scss set filetype=sass
-"autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
