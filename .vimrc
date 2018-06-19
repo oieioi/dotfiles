@@ -124,9 +124,6 @@ set incsearch
 " CTRL-A で数を増やす時常に十進数にする
 set nrformats=
 " helpを日本語化する
-" https:://github.com/vim-jp/vimdoc-ja/wiki
-"set runtimepath+=/Users/koike/Documents/vimdoc-ja-master
-"helptags /Users/koike/Documents/vimdoc-ja-master/doc
 set helplang=ja,en
 " vimにcoffeeファイルタイプを認識させる
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
