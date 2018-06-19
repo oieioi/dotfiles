@@ -144,7 +144,7 @@ if executable('cmigemo')
 endif
 
 " Denite -------------------------------
-let g:deite_enable_start_insert=1
+let g:denite_enable_start_insert=1
 call denite#custom#source(
       \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
 call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
