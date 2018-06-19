@@ -140,7 +140,7 @@ colorscheme monokain
 
 " migemo ローマ字->日本語サーチ
 if executable('cmigemo')
-  cnoremap <expr><CR> migemosearch#replace_search_word()."\<CR>"
+  cnoremap <expr><C-N> migemosearch#replace_search_word()."\<CR>"
 endif
 
 " Denite -------------------------------
