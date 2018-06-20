@@ -28,3 +28,4 @@ alias stree='open -a SourceTree .'
 
 alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake'
 alias caim='BUNDLE_GEMFILE=/Users/koike/Documents/repos/oieioi/caim/Gemfile bundle exec ruby /Users/koike/Documents/repos/oieioi/caim/bin/caim'
+alias ctags="`brew --prefix`/bin/ctags"

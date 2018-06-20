@@ -6,6 +6,7 @@ brew update
 
 brew install autojump
 brew install brew-cask
+brew install ctags
 brew install cmigemo
 brew install chromedriver
 brew install curl
