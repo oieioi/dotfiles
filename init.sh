@@ -1,3 +1,9 @@
+# brew
+# https://brew.sh/index_ja
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+sh Brewfile
+sh Brewcaskfile
+
 #ln -s .emacs ~/.emacs
 #ln -s .emacs.d ~/.emacs.d
 ln -s /Users/koike/Documents/repos/dotfiles/.gitconfig ~/.gitconfig
