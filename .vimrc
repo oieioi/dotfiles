@@ -11,34 +11,7 @@ set runtimepath+=/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('/Users/koike/.cache/dein')
   call dein#begin('/Users/koike/.cache/dein')
   call dein#add('/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
-  call dein#add('Shougo/denite.nvim')
-  call dein#add('Shougo/neomru.vim')
-  call dein#add('Shougo/neoyank.vim')
-  call dein#add('flazz/vim-colorschemes')
-  call dein#add('haya14busa/vim-migemo')
-  call dein#add('kchmck/vim-coffee-script')
-  call dein#add('maxmellon/vim-jsx-pretty')
-  call dein#add('othree/es.next.syntax.vim')
-  call dein#add('othree/javascript-libraries-syntax.vim')
-  call dein#add('othree/yajs.vim')
-  "call dein#add('pocke/iro.vim')
-  call dein#add('pangloss/vim-javascript')
-  call dein#add('rhysd/ghpr-blame.vim')
-  call dein#add('rhysd/migemo-search.vim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('scrooloose/syntastic')
-  call dein#add('tpope/vim-endwise')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('tpope/vim-rails')
-  call dein#add('tpope/vim-surround')
-  call dein#add('vim-jp/vimdoc-ja')
-  call dein#add('vim-scripts/Align')
-  call dein#add('vim-scripts/L9')
-
+  call dein#load_toml('/Users/koike/Documents/repos/dotfiles/vim/dein.toml')
   call dein#end()
   call dein#save_state()
 endif
@@ -135,35 +108,7 @@ set foldmethod=syntax
 let ruby_fold=1
 set foldlevel=100
 
-" カラースキーマ
-colorscheme monokain
-
 " migemo ローマ字->日本語サーチ
 if executable('cmigemo')
   cnoremap <expr><C-N> migemosearch#replace_search_word()."\<CR>"
 endif
-
-" Denite -------------------------------
-let g:denite_enable_start_insert=1
-call denite#custom#source(
-      \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [
-      \ 'tmp/',
-      \ '.git/',
-      \ 'images/',
-      \ 'img/',
-      \ 'node_modules/'])
-
-call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-call denite#custom#var('file_rec/git', 'command',
-      \ ['git', 'ls-files', '-co', '--exclude-standard'])
-call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
-call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
-
-nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
-nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
-nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
-nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
-" end Denite -------------------------------

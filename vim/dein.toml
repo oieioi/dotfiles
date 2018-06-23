@@ -1,0 +1,92 @@
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+let g:denite_enable_start_insert=1
+call denite#custom#source(
+      \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [
+      \ 'tmp/',
+      \ '.git/',
+      \ 'images/',
+      \ 'img/',
+      \ 'node_modules/'])
+
+call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+call denite#custom#var('file_rec/git', 'command',
+      \ ['git', 'ls-files', '-co', '--exclude-standard'])
+call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+
+nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
+nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
+nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
+nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+colorscheme monokain
+'''
+
+[[plugins]]
+repo = 'haya14busa/vim-migemo'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'rhysd/ghpr-blame.vim'
+
+[[plugins]]
+repo = 'rhysd/migemo-search.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'vim-scripts/Align'
+
+[[plugins]]
+repo = 'vim-scripts/L9'
