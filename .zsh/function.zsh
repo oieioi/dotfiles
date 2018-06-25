@@ -67,7 +67,7 @@ bindkey '^r' peco-select-history
 
 # 英和辞書
 # https://qiita.com/yubais/items/21cac44d71c30edd22c9
-function jap() {
+function ej() {
   # i: ignore-case
   # A: 後ろn行表示
   grep -A 1 -i --color -E "^$1" $HOME/Downloads/dictionaries/gene-utf8.txt
