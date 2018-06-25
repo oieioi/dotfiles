@@ -1,17 +1,17 @@
 " key
-let g:python3_host_prog = expand('/Users/koike/.pyenv/shims/python3')
+let g:python3_host_prog = expand('$HOME/.pyenv/shims/python3')
 
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible
 endif
 
-set runtimepath+=/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/koike/.cache/dein')
-  call dein#begin('/Users/koike/.cache/dein')
-  call dein#add('/Users/koike/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#load_toml('/Users/koike/Documents/repos/dotfiles/vim/dein.toml')
+if dein#load_state('$HOME/.cache/dein')
+  call dein#begin('$HOME/.cache/dein')
+  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#load_toml('$HOME/Documents/repos/dotfiles/vim/dein.toml')
   call dein#end()
   call dein#save_state()
 endif

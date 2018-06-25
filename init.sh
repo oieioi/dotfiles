@@ -5,14 +5,14 @@ sh Brewfile
 sh Brewcaskfile
 
 # dotiles
-ln -s /Users/koike/Documents/repos/dotfiles/.gitconfig ~/.gitconfig
-ln -s /Users/koike/Documents/repos/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s /Users/koike/Documents/repos/dotfiles/.zshrc ~/.zshrc
-ln -s /Users/koike/Documents/repos/dotfiles/.zsh ~/.zsh
-ln -s /Users/koike/Documents/repos/dotfiles/.vimrc ~/.vimrc
-ln -s /Users/koike/Documents/repos/dotfiles/.tigrc ~/.tigrc
-mkdir -p ~/.config/nvim
-ln -s /Users/koike/Documents/repos/dotfiles/.vimrc ~/.config/nvim/init.vim
+ln -s $HOME/Documents/repos/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/Documents/repos/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/Documents/repos/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/Documents/repos/dotfiles/.zsh $HOME/.zsh
+ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/Documents/repos/dotfiles/.tigrc $HOME/.tigrc
+mkdir -p $HOME/.config/nvim
+ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/nvim/init.vim
 
 # dein.vim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/Downloads/dein-installer.sh
@@ -27,4 +27,4 @@ pip3 install typing
 gem install neovim
 
 # Finderのタイトル表示
-defaults write com.apple.finder _FXShowPosixPathInTitle -boolean true\n
+defaults write com.apple.finder _FXShowPosixPathInTitle -boolean true

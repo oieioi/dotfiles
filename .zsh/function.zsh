@@ -70,7 +70,7 @@ bindkey '^r' peco-select-history
 function jap() {
   # i: ignore-case
   # A: 後ろn行表示
-  grep -A 1 -i --color -E "^$1" /Users/koike/Downloads/dictionaries/gene-utf8.txt
+  grep -A 1 -i --color -E "^$1" $HOME/Downloads/dictionaries/gene-utf8.txt
 }
 
 function p() { peco | while read LINE; do $@ $LINE; done }

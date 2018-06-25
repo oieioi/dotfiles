@@ -22,14 +22,14 @@
 	editor = nvim
 	# gitcontrib/diff-highlightをパスの通ったとこに置くこと
 	pager = diff-highlight|LESS=-R less
-	excludesfile = /Users/koike/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [log]
 	date = local
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Users/koike/Library/Caches/com.torusknot.SourceTreeNotMAS/org.sparkle-project.Sparkle/Sourcetree 159/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = ~/Library/Caches/com.torusknot.SourceTreeNotMAS/org.sparkle-project.Sparkle/Sourcetree 159/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [http]
 	sslVerify = false
