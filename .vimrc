@@ -103,6 +103,9 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
 " coffeescriptインデントを設定
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
+" css
+autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+
 
 set foldmethod=syntax
 let ruby_fold=1
