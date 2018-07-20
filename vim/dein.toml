@@ -1,28 +1,40 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-let g:denite_enable_start_insert=1
-call denite#custom#source(
-      \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
-call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
-      \ [
-      \ 'tmp/',
-      \ '.git/',
-      \ 'images/',
-      \ 'img/',
-      \ 'node_modules/'])
+  let g:denite_enable_start_insert=1
 
-call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-call denite#custom#var('file_rec/git', 'command',
-      \ ['git', 'ls-files', '-co', '--exclude-standard'])
-call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
-call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+  " git ls-files するための設定
+  call denite#custom#source(
+        \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
+  call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+        \ [
+        \ 'tmp/',
+        \ '.git/',
+        \ 'images/',
+        \ 'img/',
+        \ 'node_modules/'])
+  call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+  call denite#custom#var('file_rec/git', 'command',
+        \ ['git', 'ls-files', '-co', '--exclude-standard'])
+  call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
+  call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
 
-nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
-nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
-nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
-nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
+  " grep -> ag
+  call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  call denite#custom#var('grep', 'command', ['ag'])
+  call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+  call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'pattern_opt', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#var('grep', 'final_opts', [])
+
+  " key bind
+  nnoremap <silent> ,uy :<C-u>Denite neoyank<CR>
+  nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
+  nnoremap <silent> ,ug :<C-u>Denite grep<CR>
+  nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+  nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
+  nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 '''
 
 [[plugins]]
@@ -30,6 +42,8 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_i = 1
 
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
