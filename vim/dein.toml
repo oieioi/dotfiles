@@ -85,6 +85,9 @@ repo = 'scrooloose/nerdtree'
 repo = 'scrooloose/syntastic'
 
 [[plugins]]
+repo = 'slim-template/vim-slim'
+
+[[plugins]]
 repo = 'tpope/vim-endwise'
 
 [[plugins]]
