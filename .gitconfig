@@ -2,9 +2,9 @@
 	email = atsuinatsu.samuifuyu@gmail.com
 	name = oieioi
 [alias]
-	a=add
-	b = branch
-	br = branch -a
+	a = add
+	b = !git --no-pager branch
+	br = !git --no-pager branch -a
 	cached = diff --cached
 	co = checkout
 	com = commit -m
