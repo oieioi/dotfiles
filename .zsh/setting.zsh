@@ -12,11 +12,14 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+
 export PATH=$PATH:~/bin
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 export GOPATH=~/.go
+export PATH=$PATH:$GOPATH/bin
 
 # prompt
 PROMPT="%F{cyan}%n%f%F{white}@%f%F{green}%m%f %F{yellow}%~%f %1(v|%F{magenta}%U%1v%f%u|) %F{blue}%*%f
