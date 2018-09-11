@@ -24,6 +24,7 @@ alias t='tmux -2'
 alias vim=nvim
 alias v=vim
 alias o='git ls-files | peco | xargs -o nvim'
+alias gh='ghq list | peco | xargs -o ghq look'
 alias stree='open -a SourceTree .'
 
 alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
