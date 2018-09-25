@@ -24,6 +24,7 @@ brew install hub
 brew install imagemagick
 brew install jpegoptim
 brew install jq
+brew install lolcat
 brew install mozjpeg
 brew install neovim
 brew install nkf
