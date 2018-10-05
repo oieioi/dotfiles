@@ -105,7 +105,7 @@ au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 " css
 autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
-
+autocmd BufRead,BufNewFile *.yaml,*.yml setlocal foldmethod=indent
 
 set foldmethod=syntax
 let ruby_fold=1
