@@ -27,6 +27,6 @@ alias v=vim
 alias o='git ls-files | peco | xargs -o nvim'
 alias stree='open -a SourceTree .'
 alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
-alias caim='BUNDLE_GEMFILE=$HOME/Documents/repos/oieioi/caim/Gemfile bundle exec ruby $HOME/Documents/repos/oieioi/caim/bin/caim'
+alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
 alias ctags="`brew --prefix`/bin/ctags"
 alias cat=lolcat
