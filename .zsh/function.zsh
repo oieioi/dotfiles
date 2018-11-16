@@ -40,8 +40,7 @@ function precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 # gitリポジトリトップに移動する
-function u()
-{
+function u() {
     cd ./$(git rev-parse --show-cdup)
     if [ $# = 1 ]; then
         cd $1
