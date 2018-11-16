@@ -98,20 +98,17 @@ set incsearch
 set nrformats=
 " helpを日本語化する
 set helplang=ja,en
-" vimにcoffeeファイルタイプを認識させる
+" for CoffeeScript
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" erb
 au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
 " coffeescriptインデントを設定
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 " css
 autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
+" yaml
 autocmd BufRead,BufNewFile *.yaml,*.yml setlocal foldmethod=indent
-
+" 折りたたみ
 set foldmethod=syntax
-let ruby_fold=1
 set foldlevel=100
-
-" migemo ローマ字->日本語サーチ
-if executable('cmigemo')
-  cnoremap <expr><C-N> migemosearch#replace_search_word()."\<CR>"
-endif
+let ruby_fold=1
