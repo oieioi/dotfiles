@@ -72,7 +72,13 @@ repo = 'othree/javascript-libraries-syntax.vim'
 repo = 'othree/yajs.vim'
 
 [[plugins]]
+repo = 'oieioi/increment-day.vim'
+
+[[plugins]]
 repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'pedrohdz/vim-yaml-folds'
 
 [[plugins]]
 repo = 'rhysd/ghpr-blame.vim'
