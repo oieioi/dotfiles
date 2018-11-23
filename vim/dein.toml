@@ -73,6 +73,10 @@ repo = 'othree/yajs.vim'
 
 [[plugins]]
 repo = 'oieioi/increment-day.vim'
+hook_add = '''
+  nnoremap <C-a> :IncrementDay<CR>
+  nnoremap <C-x> :DecrementDay<CR>
+'''
 
 [[plugins]]
 repo = 'pangloss/vim-javascript'
