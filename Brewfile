@@ -12,6 +12,9 @@ brew install cmake
 brew install cmigemo
 brew install ctags
 brew install curl
+brew install elasticsearch
+# for elasticsearch
+brew install kibana
 brew install gibo
 brew install gist
 brew install git
