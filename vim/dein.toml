@@ -123,3 +123,5 @@ repo = 'vim-scripts/L9'
 [[plugins]]
 repo = 'wellle/targets.vim'
 
+[[plugins]]
+repo = 'posva/vim-vue'
