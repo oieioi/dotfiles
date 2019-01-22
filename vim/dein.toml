@@ -125,3 +125,7 @@ repo = 'wellle/targets.vim'
 
 [[plugins]]
 repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+hook_add = 'nnoremap <C-_> :MundoToggle<CR>'
