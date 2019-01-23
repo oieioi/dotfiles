@@ -59,3 +59,4 @@ brew install yarn
 brew install zopfli
 brew install zsh
 brew install zsh-completions
+brew install tldr
