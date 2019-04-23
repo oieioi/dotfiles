@@ -132,3 +132,6 @@ hook_add = 'nnoremap <C-_> :MundoToggle<CR>'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'csscomb/vim-csscomb'
