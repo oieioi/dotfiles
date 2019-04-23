@@ -30,3 +30,4 @@ alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-
 alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
 alias ctags="`brew --prefix`/bin/ctags"
 alias cat=lolcat
+alias help=tldr
