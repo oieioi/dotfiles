@@ -99,9 +99,11 @@ set nrformats=
 " helpを日本語化する
 set helplang=ja,en
 " for CoffeeScript
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" erb
-au BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript foldlevel=indent
+autocmd BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" .js.erb
+autocmd BufRead,BufNewFile,BufReadPre *.js.erb   set filetype=javascript
+" .html.erb
+autocmd BufRead,BufNewFile,BufReadPre *.html.erb  set foldmethod=indent
 " coffeescriptインデントを設定
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 " css
