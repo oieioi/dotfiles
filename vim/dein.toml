@@ -63,6 +63,9 @@ hook_add = '''
 repo = 'kchmck/vim-coffee-script'
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
 
 [[plugins]]
