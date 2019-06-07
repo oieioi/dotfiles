@@ -46,6 +46,9 @@ on_path = '.*'
 on_i = 1
 
 [[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
 repo = 'flazz/vim-colorschemes'
 hook_add = '''
 colorscheme monokain
