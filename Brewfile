@@ -4,6 +4,7 @@ brew tap peco/peco
 brew tap sanemat/font
 brew update
 
+brew install anyenv
 brew install autojump
 brew install automake
 brew install brew-cask
@@ -31,7 +32,7 @@ brew install lolcat
 brew install mozjpeg
 brew install neovim
 brew install nkf
-brew install nodebrew
+#brew install nodebrew
 brew install openssl
 brew install optipng
 brew install pcre

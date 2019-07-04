@@ -17,7 +17,10 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$PATH
 
 # nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+#export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# anyenv
+eval "$(anyenv init -)"
 
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
