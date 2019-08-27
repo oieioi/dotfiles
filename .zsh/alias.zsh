@@ -31,3 +31,4 @@ alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec
 alias ctags="`brew --prefix`/bin/ctags"
 alias cat=lolcat
 alias help=tldr
+alias spo=spotify
