@@ -14,6 +14,7 @@ brew install cmigemo
 brew install ctags
 brew install curl
 brew install elasticsearch
+brew install fzf
 # for elasticsearch
 brew install kibana
 brew install gibo

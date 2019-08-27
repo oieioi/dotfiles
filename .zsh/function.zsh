@@ -47,8 +47,8 @@ function u() {
     fi
 }
 
-# pecoでhistory検索
-function peco-select-history() {
+# history検索
+function select-history() {
     local tac
     if which tac > /dev/null; then
         tac="tac"
@@ -57,12 +57,12 @@ function peco-select-history() {
     fi
     BUFFER=$(\history -n 1 | \
         eval $tac | \
-        peco --query "$LBUFFER")
+        fzf --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N select-history
+bindkey '^r' select-history
 
 # 英和辞書
 # https://qiita.com/yubais/items/21cac44d71c30edd22c9

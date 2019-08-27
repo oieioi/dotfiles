@@ -15,7 +15,7 @@ alias gs='git s'
 alias gf='git f -p'
 alias gd='git d'
 alias ga='git a'
-alias gh='cd $(ghq list|peco|xargs -Irepo echo "$(ghq root)/repo")'
+alias gh='cd $(ghq list|fzf|xargs -Irepo echo "$(ghq root)/repo")'
 alias grep='grep --color'
 alias e='emacsclient -t'
 alias es='emacs --daemon'
@@ -24,7 +24,7 @@ alias t='tmux -2'
 #alias sed=/usr/local/opt/gnu-sed/libexec/gnubin/sed
 alias vim=nvim
 alias v=vim
-alias o='git ls-files | peco | xargs -o nvim'
+alias o='git ls-files | fzf | xargs -o nvim'
 alias stree='open -a SourceTree .'
 alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
 alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
