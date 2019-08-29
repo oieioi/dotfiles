@@ -57,7 +57,7 @@ function select-history() {
     fi
     BUFFER=$(\history -n 1 | \
         eval $tac | \
-        fzf --query "$LBUFFER")
+        peco --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
