@@ -20,6 +20,7 @@ brew install kibana
 brew install gibo
 brew install gist
 brew install git
+brew install git-lfs
 brew install ghq
 brew install gnu-sed
 brew install go
