@@ -110,6 +110,8 @@ autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 " yaml
 autocmd BufRead,BufNewFile *.yaml,*.yml setlocal foldmethod=indent
+" php
+autocmd BufRead,BufNewFile *.php setlocal filetype=html foldmethod=indent
 " 折りたたみ
 set foldmethod=syntax
 set foldlevel=100
