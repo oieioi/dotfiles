@@ -8,7 +8,8 @@
 	cached = diff --cached
 	clean-branch = !git branch|grep -v -E '^\\*'|xargs git branch -d
 	clean-branch-force = !git branch|grep -v -E '^\\*'|xargs git branch -D
-	co = checkout
+	co = !echo 'Use git restore!!!!!!!!!!!!'
+	sh = switch
 	com = commit -m
 	cpr = pull-request
 	d = diff
