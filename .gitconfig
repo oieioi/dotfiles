@@ -19,6 +19,8 @@
 	last = show -1 HEAD --stat -p
 	s = status -s
 	sb = show-branch
+	sh = switch
+	rs = restore
 [color]
 	ui = true
 	diff = true
