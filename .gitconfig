@@ -9,18 +9,16 @@
 	clean-branch = !git branch|grep -v -E '^\\*'|xargs git branch -d
 	clean-branch-force = !git branch|grep -v -E '^\\*'|xargs git branch -D
 	co = !echo 'Use git restore!!!!!!!!!!!!'
-	rs = restore
-	sh = switch
 	com = commit -m
 	cpr = pull-request
 	d = diff
 	f = fetch
 	l = log --all --graph --pretty='format:%C(yellow)%h%Creset %C(magenta)%ad%Creset %Cgreen%an%Creset %s %Cred%d%Creset'  --branches
 	last = show -1 HEAD --stat -p
+	rs = restore
 	s = status -s
 	sb = show-branch
 	sh = switch
-	rs = restore
 [color]
 	ui = true
 	diff = true
