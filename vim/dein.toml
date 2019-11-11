@@ -5,7 +5,7 @@ hook_add = '''
 
   " git ls-files するための設定
   call denite#custom#source(
-        \ 'file/rec', 'matchers', ['matcher_ignore_globs'])
+        \ 'file_rec', 'matchers', ['matcher_ignore_globs'])
   call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
         \ [
         \ 'tmp/',
@@ -13,14 +13,14 @@ hook_add = '''
         \ 'images/',
         \ 'img/',
         \ 'node_modules/'])
-  call denite#custom#alias('source', 'file/rec/git', 'file/rec')
-  call denite#custom#var('file/rec/git', 'command',
+  call denite#custom#alias('source', 'file_rec/git', 'file_rec')
+  call denite#custom#var('file_rec/git', 'command',
         \ ['git', 'ls-files', '-co', '--exclude-standard'])
   call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
   call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
 
   " grep -> ag
-  call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+  call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
   call denite#custom#var('grep', 'command', ['ag'])
   call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
   call denite#custom#var('grep', 'recursive_opts', [])
@@ -34,7 +34,7 @@ hook_add = '''
   nnoremap <silent> ,ug :<C-u>Denite grep<CR>
   nnoremap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
   nnoremap <silent> ,uu :<C-u>Denite file_mru buffer<CR>
-  nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+  nnoremap <silent> ,uh :<C-u>Denite `finddir('.git', ';') != '' ? 'file_rec/git' : 'file_rec'`<CR>
 '''
 
 [[plugins]]
