@@ -1,18 +1,11 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-  autocmd FileType denite call s:denite_my_settings()
-  function! s:denite_my_settings() abort
-    nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
-    nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
-    nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
-    nnoremap <silent><buffer><expr> q denite#do_map('quit')
-    nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
-    nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
-    nnoremap <silent><buffer><expr> q denite#do_map('quit')
-  endfunction
+  let g:denite_enable_start_insert=1
 
-  call denite#custom#source('file/rec', 'matchers', ['matcher_ignore_globs'])
+  " git ls-files するための設定
+  call denite#custom#source(
+        \ 'file/rec', 'matchers', ['matcher_ignore_globs'])
   call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
         \ [
         \ 'tmp/',
@@ -21,7 +14,8 @@ hook_add = '''
         \ 'img/',
         \ 'node_modules/'])
   call denite#custom#alias('source', 'file/rec/git', 'file/rec')
-  call denite#custom#var('file/rec/git', 'command', ['git', 'ls-files', '-co', '--exclude-standard'])
+  call denite#custom#var('file/rec/git', 'command',
+        \ ['git', 'ls-files', '-co', '--exclude-standard'])
   call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
   call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
 
