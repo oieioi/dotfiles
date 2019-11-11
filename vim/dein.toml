@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+rev='2.1'
 hook_add = '''
   let g:denite_enable_start_insert=1
 
