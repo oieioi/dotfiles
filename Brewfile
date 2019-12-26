@@ -44,12 +44,10 @@ brew install pngout
 brew install postgresql
 brew install pwgen
 brew install pyenv
-brew install rbenv
 brew install readline
 brew install reattach-to-user-namespace
 brew install rename
 brew install ricty
-brew install ruby-build
 brew install the_silver_searcher
 brew install tig
 brew install tmux
