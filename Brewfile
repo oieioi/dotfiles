@@ -11,6 +11,7 @@ brew install brew-cask
 brew install chromedriver
 brew install cmake
 brew install cmigemo
+brew install coreutils
 brew install ctags
 brew install curl
 brew install elasticsearch
