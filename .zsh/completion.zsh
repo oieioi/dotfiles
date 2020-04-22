@@ -1,5 +1,13 @@
-fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
+case ${OSTYPE} in
+  darwin*)
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+    fpath=($(brew --prefix)/share/zsh-completions $fpath)
+    ;;
+  linux*)
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+    fpath=(/usr/local/share/zsh/zsh-completions $fpath)
+    ;;
+esac
 
 autoload -U compinit
 compinit

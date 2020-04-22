@@ -28,6 +28,10 @@ alias o='git ls-files | fzf | xargs -o nvim'
 alias stree='open -a SourceTree .'
 alias tw='docker run -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
 alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
-alias ctags="`brew --prefix`/bin/ctags"
+case ${OSTYPE} in
+  darwin*)
+    alias ctags="`brew --prefix`/bin/ctags"
+    ;;
+esac
 alias help=tldr
 alias spo=spotify
