@@ -32,7 +32,7 @@
 [http]
 	sslVerify = false
 [credential]
-	helper = osxkeychain
+	helper = store
 [push]
 	default = current
 [filter "lfs"]
