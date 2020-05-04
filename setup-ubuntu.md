@@ -1,3 +1,13 @@
+# キーボードの設定
+# capslock => ctrl, 
+setxkbmap -layout us -option ctrl:nocaps
+# xinput でキーボードのidをしらべる
+# thinkpadのaltとsuperいれかえ
+setxkbmap -device 14 -layout us -option altwin:swap_alt_win
+
+# かんたん設定
+sudo apt install gnome-tweaks
+
 sudo apt install git
 sudo apt install curl
 sudo apt install neovim
@@ -32,4 +42,3 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
 libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
 xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 
-# あとはinit.shを参考に
