@@ -7,8 +7,6 @@ hook_add = '''
   autocmd FileType denite call s:denite_my_settings()
   function! s:denite_my_settings() abort
     let b:dwm_disabled = 1
-    let b:auto_cursorline_disabled = 1
-    let b:denite_enable_start_insert=1
 
     nnoremap <silent><buffer> <C-n> j
     nnoremap <silent><buffer> <C-p> k
@@ -23,7 +21,7 @@ hook_add = '''
   call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-  nmap <silent> ,uf :<C-u>Denite file/rec<CR>
+  nmap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
   nmap <silent> ,uh :<C-u>Denite file/rec/git<CR>
   nmap <silent> ,ug :<C-u>Denite grep<CR>
   nmap <silent> ,ub :<C-u>Denite buffer<CR>
