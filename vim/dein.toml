@@ -21,11 +21,11 @@ hook_add = '''
   call denite#custom#var('file/rec/git', 'command',
       \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
-  nmap <silent> ,uf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
-  nmap <silent> ,uh :<C-u>Denite file/rec/git<CR>
-  nmap <silent> ,ug :<C-u>Denite grep<CR>
-  nmap <silent> ,ub :<C-u>Denite buffer<CR>
-  nmap <silent> ,uy :<C-u>Denite neoyank<CR>
+  nmap <silent> ,uf :<C-u>DeniteBufferDir -start-filter -buffer-name=files file<CR>
+  nmap <silent> ,uh :<C-u>Denite file/rec/git -start-filter<CR>
+  nmap <silent> ,ug :<C-u>Denite grep -start-filter<CR>
+  nmap <silent> ,ub :<C-u>Denite buffer -start-filter<CR>
+  nmap <silent> ,uy :<C-u>Denite neoyank -start-filter<CR>
 '''
 
 [[plugins]]

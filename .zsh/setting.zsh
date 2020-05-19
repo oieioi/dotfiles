@@ -23,6 +23,8 @@ case ${OSTYPE} in
     export PATH=$PATH:$HOME/.anyenv/bin
     # Linux brew
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    # snap
+    export PATH=$PATH:/snap/bin
     ;;
 esac
 # anyenv
