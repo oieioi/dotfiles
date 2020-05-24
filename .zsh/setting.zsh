@@ -18,7 +18,15 @@ export PATH=$HOME/.rbenv/bin:$PATH
 
 # nodebrew
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
-
+case ${OSTYPE} in
+  linux*)
+    export PATH=$PATH:$HOME/.anyenv/bin
+    # Linux brew
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    # snap
+    export PATH=$PATH:/snap/bin
+    ;;
+esac
 # anyenv
 eval "$(anyenv init -)"
 
@@ -29,9 +37,10 @@ export PATH=$PATH:~/bin
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 
-export GOPATH=~/.go
+export GOPATH=$HOME/go
 
 export PATH=$PATH:$GOPATH/bin
+
 
 # pushd
 setopt auto_pushd

@@ -1,5 +1,5 @@
 " key
-let g:python3_host_prog = expand('$HOME/.pyenv/shims/python3')
+let g:python3_host_prog = expand('$HOME/.anyenv/envs/pyenv/shims/python3')
 
 "dein Scripts-----------------------------
 if &compatible
@@ -11,7 +11,7 @@ set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 if dein#load_state('$HOME/.cache/dein')
   call dein#begin('$HOME/.cache/dein')
   call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#load_toml('$HOME/Documents/repos/dotfiles/vim/dein.toml')
+  call dein#load_toml('$HOME/.config/nvim/dein.toml')
   call dein#end()
   call dein#save_state()
 endif
