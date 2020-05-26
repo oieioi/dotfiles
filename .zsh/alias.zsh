@@ -32,13 +32,16 @@ alias t='tmux -2'
 #alias sed=/usr/local/opt/gnu-sed/libexec/gnubin/sed
 alias vim=nvim
 alias v=vim
-alias o='git ls-files | fzf | xargs --no-run-if-empty -o nvim'
 alias stree='open -a SourceTree .'
 alias tw='docker run --rm -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
 alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
 case ${OSTYPE} in
   darwin*)
     alias ctags="`brew --prefix`/bin/ctags"
+    alias o='git ls-files | fzf | xargs -o nvim'
+    ;;
+  linux*)
+    alias o='git ls-files | fzf | xargs --no-run-if-empty -o nvim'
     ;;
 esac
 alias help=tldr
