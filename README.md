@@ -1,3 +1,3 @@
 # dotfiles
 
-my dotfiles for macOS !
+My dotfiles for macOS and Ubuntu 18!
