@@ -1,1 +1,1 @@
-/Users/koike/Documents/repos/dotfiles/.vimrc
+/Users/d.koike/ghq/github.com/oieioi/dotfiles/.vimrc

@@ -1,3 +1,4 @@
+# cask いらなくなってた。caskの方を指定する場合は --cask をつける
 #brew cask install clipy
 #brew cask install google-chrome
 #brew cask install evernote

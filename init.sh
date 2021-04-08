@@ -11,8 +11,7 @@ ln -s $HOME/Documents/repos/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/Documents/repos/dotfiles/.zsh $HOME/.zsh
 ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/init.vim
 ln -s $HOME/Documents/repos/dotfiles/.tigrc $HOME/.tigrc
-mkdir -p $HOME/.config/nvim
-ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/nvim/init.vim
+ln -s $HOME/Documents/repos/dotfiles/vim $HOME/.config/nvim/
 
 # dein.vim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/Downloads/dein-installer.sh
