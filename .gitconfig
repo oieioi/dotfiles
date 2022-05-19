@@ -13,12 +13,14 @@
 	cpr = pull-request
 	d = diff
 	f = fetch
-	l = log --all --graph --pretty='format:%C(yellow)%h%Creset %C(magenta)%ad%Creset %Cgreen%an%Creset %s %Cred%d%Creset'  --branches
+	l = log --all --graph --pretty='format:%C(yellow)%h%C(reset) %C(magenta)%ai%C(reset) %C(green)%aN%C(reset) %s %C(red)%d%C(reset)'  --branches
 	last = show -1 HEAD --stat -p
 	rs = restore
 	s = status -s
 	sb = show-branch
 	sh = switch
+	browse-file = !echo "$(git remote get-url origin)/tree/$(git rev-parse HEAD)/$1"
+	brf = !echo \"$(git remote get-url origin)/tree/$(git rev-parse HEAD)/$1\"
 [color]
 	ui = true
 	diff = true

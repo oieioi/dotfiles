@@ -53,6 +53,7 @@ repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 hook_add = '''
+autocmd ColorScheme * highlight Visual ctermbg=7 guibg=#00ff00
 colorscheme monokain
 '''
 
@@ -105,9 +106,6 @@ repo = 'rhysd/migemo-search.vim'
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-
-[[plugins]]
 repo = 'slim-template/vim-slim'
 
 [[plugins]]
@@ -147,3 +145,26 @@ repo = 'mattn/emmet-vim'
 [[plugins]]
 repo = 'csscomb/vim-csscomb'
 
+[[plugins]]
+# LSP サポート
+repo = 'neoclide/coc.nvim'
+source = 'release'
+build = 'coc#util#install()'
+hook_add = '''
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+'''
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+let g:ale_disable_lsp = 1
+let g:ale_lint_on_text_changed = 1
+'''
