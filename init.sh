@@ -5,20 +5,19 @@ sh Brewfile
 sh Brewcaskfile
 
 # dotiles
-ln -s $HOME/Documents/repos/dotfiles/.gitconfig $HOME/.gitconfig
-ln -s $HOME/Documents/repos/dotfiles/.tmux.conf $HOME/.tmux.conf
-ln -s $HOME/Documents/repos/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/Documents/repos/dotfiles/.zsh $HOME/.zsh
-ln -s $HOME/Documents/repos/dotfiles/.vimrc $HOME/.config/init.vim
-ln -s $HOME/Documents/repos/dotfiles/.tigrc $HOME/.tigrc
-ln -s $HOME/Documents/repos/dotfiles/vim $HOME/.config/nvim/
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/.zsh $HOME/.zsh
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/.tigrc $HOME/.tigrc
+ln -s $HOME/ghq/github.com/oieioi/dotfiles/vim $HOME/.config/nvim
 
 # dein.vim
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/Downloads/dein-installer.sh
-sh ~/Downloads/dein-installer.sh ~/.cache/dein
+# curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/Downloads/dein-installer.sh
+# sh ~/Downloads/dein-installer.sh ~/.cache/dein
 
 # python
-pyenv install 3.6.5
+pyenv install 3.6.15
 pip3 install neovim
 pip3 install typing
 

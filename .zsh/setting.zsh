@@ -30,7 +30,7 @@ esac
 # anyenv
 eval "$(anyenv init -)"
 
-export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
 
 export PATH=$PATH:~/bin
 
