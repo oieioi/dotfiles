@@ -23,5 +23,5 @@ zstyle ':completion:*:hosts' hosts $hosts
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # git
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+zstyle ':completion:*:*:git:*' script /opt/homebrew/share/zsh/site-functions/git-completion.bash
 fpath=(~/.zsh $fpath)
