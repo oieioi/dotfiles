@@ -19,22 +19,22 @@ alias ducks='du -chs'
 alias topcpueater='ps -eo pcpu,pid,user,args | sort -rk1 | head'
 alias ifview='/sbin/ifconfig | grep -B 1 inet'
 alias g='git'
-alias gs='git s'
-alias gf='git f -p'
-alias gd='git d'
-alias ga='git a'
-alias gh='cd $(ghq list|fzf|xargs -Irepo echo "$(ghq root)/repo")'
+# alias gs='git s'
+# alias gf='git f -p'
+# alias gd='git d'
+# alias ga='git a'
+alias ghf='cd $(ghq list|fzf|xargs -Irepo echo "$(ghq root)/repo")'
 alias grep='grep --color'
-alias e='emacsclient -t'
-alias es='emacs --daemon'
+#alias e='emacsclient -t'
+#alias es='emacs --daemon'
 alias tiga='tig --all'
 alias t='tmux -2'
 #alias sed=/usr/local/opt/gnu-sed/libexec/gnubin/sed
 alias vim=nvim
 alias v=vim
-alias stree='open -a SourceTree .'
-alias tw='docker run --rm -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
-alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
+#alias stree='open -a SourceTree .'
+#alias tw='docker run --rm -v $HOME/.earthquake:/root/.earthquake -it earthquake --no-stream --no-logo'
+#alias caim='BUNDLE_GEMFILE=`ghq root`/github.com/oieioi/caim/Gemfile bundle exec ruby `ghq root`/github.com/oieioi/caim/bin/caim'
 case ${OSTYPE} in
   darwin*)
     alias ctags="`brew --prefix`/bin/ctags"
@@ -45,4 +45,4 @@ case ${OSTYPE} in
     ;;
 esac
 alias help=tldr
-alias spo=spotify
+#alias spo=spotify
