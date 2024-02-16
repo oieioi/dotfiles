@@ -19,8 +19,8 @@
 	s = status -s
 	sb = show-branch
 	sh = switch
-	browse-file = !echo "$(git remote get-url origin)/tree/$(git rev-parse HEAD)/$1"
-	brf = !echo \"$(git remote get-url origin)/tree/$(git rev-parse HEAD)/$1\"
+  browse-file = "!f() { open \"$(git remote get-url origin)/tree/$(git rev-parse HEAD)/$1\"; }; f"
+  browse-commit = "!f() { open \"$(git remote get-url origin)/commit/$1\"; }; f"
 [color]
 	ui = true
 	diff = true
